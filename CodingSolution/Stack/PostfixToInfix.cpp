@@ -3,7 +3,7 @@ class Solution {
   public:
     bool isalpha(char exp)
     {
-        if(exp>='a' && exp<='z' || exp>='A' && exp<='Z' )
+        if(exp>='a' && exp<='z' || exp>='A' && exp<='Z' ||exp>='0' && exp<='9' )
         {
             return true;
         }
