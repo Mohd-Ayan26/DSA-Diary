@@ -46,19 +46,33 @@ OR
 /*********************************************************************************************************************************************************************
 *********************************************************************************************************************************************************************/
 
-pair<bool,int> isBalanced(TreeNode* root) {
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+   
+    pair<bool,int> Balanced(TreeNode* root) {
         if(root==NULL)
         {
             pair<bool,int> p=make_pair(true,0);
             return p;
         }
-        pair<bool,int> left=isBalanced(root->left);
-        pair<bool,int> right=isBalanced(root->right);
+        pair<bool,int> left=Balanced(root->left);
+        pair<bool,int> right=Balanced(root->right);
         bool leftans=left.first;
         bool rightans=right.first;
-        bool diff=abs(left.second-right.second)<=0;
+        bool diff=abs(left.second-right.second)<=1;
         pair<bool,int> ans;
-        ans.second=left.second+right.second+1;
+        ans.second=max(left.second,right.second)+1;
         if(leftans && rightans && diff)
         {
             ans.first=true;
@@ -71,3 +85,11 @@ pair<bool,int> isBalanced(TreeNode* root) {
         return ans;
         
     }
+       
+     bool isBalanced(TreeNode* root) 
+    {
+        pair<bool,int> ans=Balanced(root);
+        return ans.first;
+        
+    }
+};
