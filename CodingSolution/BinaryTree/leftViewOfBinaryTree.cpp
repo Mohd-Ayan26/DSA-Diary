@@ -16,7 +16,7 @@ struct Node
 
 class Solution {
   public:
-   void rightview(Node* root,vector<int> &ans,int level)
+   void leftview(Node* root,vector<int> &ans,int level)
     {
         if(root==NULL)
         {
@@ -26,12 +26,12 @@ class Solution {
         {
             ans.push_back(root->data);
         }
-        rightview(root->left,ans,level+1);
-        rightview(root->right,ans,level+1);
+        leftview(root->left,ans,level+1);
+        leftview(root->right,ans,level+1);
     }
-    vector<int> leftView(Node *root) {
+    vector<int> leftsideView(Node *root) {
         vector<int> ans;
-        rightview(root,ans,0);
+        leftview(root,ans,0);
         return ans;
     }
 };
