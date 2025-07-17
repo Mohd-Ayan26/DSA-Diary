@@ -1,6 +1,6 @@
 # 📚 Data Structures and Algorithms (DSA)
 
-Welcome to my **DSA repository**! This repo contains my solutions to various DSA problems, practice codes, and study notes to strengthen my programming and problem-solving skills.
+Welcome to my **DSA Diary repository**! This repo contains my solutions to various DSA problems, practice codes, and study notes to strengthen my programming and problem-solving skills.
 
 ## 🚀 What’s inside
 
